@@ -3,9 +3,9 @@ import {TurboModuleRegistry} from 'react-native';
 import type {TurboModule, CodegenTypes} from 'react-native';
 
 export type BatterySnapshot = {
-  level: number;      // 0 - 100
+  level: number;      
   charging: boolean;
-  source: string;     // "ac" | "usb" | "wireless" | "unknown"
+  source: string;    
 };
 
 export interface Spec extends TurboModule {

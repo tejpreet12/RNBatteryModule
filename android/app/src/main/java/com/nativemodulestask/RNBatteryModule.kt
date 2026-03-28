@@ -69,7 +69,6 @@ class RNBatteryModule(private val reactContext: ReactApplicationContext)
   }
 
   override fun addListener(eventName: String?) {
-    android.util.Log.d("BatteryModule", "addListener called: $eventName")
     if (eventName == "onBatteryChanged") {
       startBatteryUpdates()
     }

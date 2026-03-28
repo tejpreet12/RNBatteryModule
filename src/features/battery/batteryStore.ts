@@ -25,17 +25,14 @@ export const useBatteryStore = create<BatteryState>((set, get) => ({
 
       set({ status: 'success', snapshot });
 
-      // 🔥 ADD THIS (missing piece)
       NativeBatteryModule.addListener('onBatteryChanged');
 
-  const subscription = NativeBatteryModule.onBatteryChanged(next => {
-    console.log('EVENT RECEIVED:', next);
-
-    set({
-      snapshot: next,
-      status: 'success',
-    });
-  });
+      const subscription = NativeBatteryModule.onBatteryChanged(next => {
+        set({
+          snapshot: next,
+          status: 'success',
+        });
+      });
 
       return () => {
         subscription.remove();
