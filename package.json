@@ -2,6 +2,19 @@
   "name": "NativeModulesTask",
   "version": "0.0.1",
   "private": true,
+  "codegenConfig": {
+    "name": "BatteryModuleSpec",
+    "type": "modules",
+    "jsSrcsDir": "src/native/battery",
+    "android": {
+      "javaPackageName": "com.nativemodulestask"
+    },
+    "ios": {
+      "modulesProvider": {
+        "BatteryModule": "RNBatteryModule"
+      }
+    }
+  },
   "scripts": {
     "android": "react-native run-android",
     "ios": "react-native run-ios",
